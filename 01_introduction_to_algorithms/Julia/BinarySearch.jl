@@ -2,8 +2,7 @@ using Distributions
 
 srand(20130810)
 
-function binarySearch(list,
-                      item)
+function binarySearch(list::Vector{T}, item::T) where T <: Real
     # [low, high] region of the list is being searched
     low = 1
     high = length(list)
@@ -31,3 +30,6 @@ print(binarySearch(myList, 3))
 
 myRandomList = rand(Uniform(), 10^6)
 @time binarySearch(myRandomList, 0.5)
+
+myOtherList = 1:10^6
+@time binarySearch(myOtherList, 225)
