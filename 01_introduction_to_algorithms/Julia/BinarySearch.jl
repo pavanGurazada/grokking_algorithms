@@ -4,6 +4,7 @@ srand(20130810)
 
 function binarySearch(list::Vector{T}, item::T) where T <: Real
     # [low, high] region of the list is being searched
+    # sorted list needed
     low = 1
     high = length(list)
 
@@ -27,6 +28,9 @@ end
 
 myList = [1, 3, 5, 7, 9]
 print(binarySearch(myList, 3))
+
+mySecondList = [2, 4, 1, 3, 10, 19, 0]
+print(binarySearch(mySecondList, 1))
 
 myRandomList = rand(Uniform(), 10^6)
 @time binarySearch(myRandomList, 0.5)
